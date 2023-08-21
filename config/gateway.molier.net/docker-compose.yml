@@ -1,0 +1,4 @@
+---
+configs:
+  named_local_conf:
+    file: ./named.local.conf

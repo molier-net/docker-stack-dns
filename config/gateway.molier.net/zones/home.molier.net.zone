@@ -1,0 +1,8 @@
+@ 3600 IN SOA ns01.molier.net. hostmaster 1692639454 7200 3600 1209600 3600
+@ 3600 IN NS ns01.molier.net.
+@ 3600 IN NS ns02.molier.net.
+@ 3600 IN A 217.160.60.56
+@ 3600 IN A 82.165.116.192
+@ 3600 IN MX 10 gateway
+* 3600 IN CNAME gateway
+www 3600 IN CNAME home.molier.net.
