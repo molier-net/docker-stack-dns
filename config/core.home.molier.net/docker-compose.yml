@@ -1,0 +1,17 @@
+---
+services:
+  bind9:
+    depends_on:
+      zones:
+        condition: service_completed_successfully
+
+  zones:
+    image: busybox
+    volumes:
+      - "./config/core.home.molier.net/zones:/zones:ro"
+      - "zones:/var/bind:rw"
+    command: cp -ra /zones/. /var/bind/pri
+
+configs:
+  named_local_conf:
+    file: config/core.home.molier.net/named.local.conf
