@@ -1,0 +1,35 @@
+---
+services:
+  bind9:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    configs:
+      - source: named_conf
+        target: /etc/bind/named.conf
+        uid: "0"
+        gid: "101"
+        mode: 0440
+      - source: named_local_conf
+        target: /etc/bind/named.local.conf
+        uid: "0"
+        gid: "101"
+        mode: 0440
+    secrets:
+      - axfr_conf
+    volumes:
+      - zones:/var/bind:rw
+    network_mode: host
+
+configs:
+  named_conf:
+    file: config/named.conf
+  named_local_conf:
+    file: config/named.local.conf
+
+secrets:
+  axfr_conf:
+    file: secrets/axfr.conf
+  
+volumes:
+  zones:
