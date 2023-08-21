@@ -1,0 +1,8 @@
+---
+volumes:
+  zones:
+    driver: local-persist
+    driver_opts:
+      o: '${HM_DATA_DIR}/zones'
+      
+  
