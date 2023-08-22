@@ -6,7 +6,7 @@ services:
         condition: service_completed_successfully
 
   zones:
-    image: busybox
+    image: busybox:1.36
     volumes:
       - ./config/core.home.molier.net/zones:/zones:ro
       - zones:/var/bind:rw
