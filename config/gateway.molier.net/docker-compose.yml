@@ -2,7 +2,7 @@
 services:
   zones:
     volumes:
-      - config/core.home.molier.net/zones:/zones:ro
+      - ./config/core.home.molier.net/zones:/zones:ro
 
 configs:
   named_local_conf:
