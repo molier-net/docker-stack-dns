@@ -9,11 +9,13 @@ services:
         target: /etc/bind/named.conf
         uid: "0"
         gid: "101"
+        # trunk-ignore(yamllint/octal-values)
         mode: 0440
       - source: named_local_conf
         target: /etc/bind/named.local.conf
         uid: "0"
         gid: "101"
+        # trunk-ignore(yamllint/octal-values)
         mode: 0440
     secrets:
       - axfr_conf
@@ -30,6 +32,6 @@ configs:
 secrets:
   axfr_conf:
     file: secrets/axfr.conf
-  
+
 volumes:
-  zones:
+  zones: {}

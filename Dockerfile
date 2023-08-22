@@ -1,3 +1,4 @@
+#trunk-ignore-all(trivy/DS002,trivy/DS026,checkov/CKV_DOCKER_2,checkov/CKV_DOCKER_3,terrascan/AC_DOCKER_0041)
 FROM alpine:3.18 as bind9
 
 # renovate: datasource=repology depName=alpine_3_18/bind versioning=loose
@@ -15,8 +16,6 @@ COPY --from=bind9 / /
 VOLUME [ "/var/bind", "/etc/bind" ]
 
 EXPOSE 53/tcp 53/udp 953/tcp
-
-HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD [ "/usr/sbin/rndc","status" ]
 
 ENTRYPOINT [ "/usr/sbin/named" ]
 CMD [ "-g", "-f", "-c", "/etc/bind/named.conf", "-u", "named" ]

@@ -8,8 +8,8 @@ services:
   zones:
     image: busybox
     volumes:
-      - "./config/core.home.molier.net/zones:/zones:ro"
-      - "zones:/var/bind:rw"
+      - ./config/core.home.molier.net/zones:/zones:ro
+      - zones:/var/bind:rw
     command: cp -ra /zones/. /var/bind/pri
 
 configs:
