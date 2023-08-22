@@ -1,6 +1,20 @@
 ---
+services:
+  zones:
+    depends_on:
+      data:
+        condition: service_completed_successfully
+
+  data:
+    image: busybox:1.36
+    volumes:
+      - ${HM_DATA_DIR}/zones:/data:rw
+    command: sleep 1
+
 volumes:
   zones:
-    driver: local-persist
+    driver: local
     driver_opts:
-      o: "${HM_DATA_DIR}/zones"
+      type: none
+      o: bind
+      device: "${HM_DATA_DIR}/zones"

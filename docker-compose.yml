@@ -23,6 +23,17 @@ services:
       - zones:/var/bind:rw
     network_mode: host
 
+    depends_on:
+      zones:
+        condition: service_completed_successfully
+
+  zones:
+    image: busybox:1.36
+    volumes:
+      - ./config/zones:/zones:ro
+      - zones:/var/bind:rw
+    command: cp -ra /zones/. /var/bind/pri
+
 configs:
   named_conf:
     file: config/named.conf
