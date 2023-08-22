@@ -1,8 +1,8 @@
-@ 3600 IN SOA ns.home.molier.net. hostmaster.home.molier.net. 1692639460 7200 3600 1209600 3600
+@ 3600 IN SOA ns.home.molier.net. hostmaster.home.molier.net. 1692704641 7200 3600 1209600 3600
 @ 3600 IN NS ns.home.molier.net.
 1 3600 IN PTR opnsense.home.molier.net.
 10 3600 IN PTR truenas.home.molier.net.
-2 3600 IN PTR dokku.home.molier.net.
+2 3600 IN PTR harbormaster.home.molier.net.
 2 3600 IN PTR ns.home.molier.net.
 2 3600 IN PTR smtp.home.molier.net.
 3 3600 IN PTR ca.home.molier.net.
