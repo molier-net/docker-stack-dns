@@ -2,7 +2,7 @@
 FROM alpine:3.18 as bind9
 
 # renovate: datasource=repology depName=alpine_3_18/bind versioning=loose
-ARG BIND9_VERSION="9.18.16-r0"
+ARG BIND9_VERSION="9.18.19-r0"
 
 RUN apk --update --no-cache add \
     bind=${BIND9_VERSION}
