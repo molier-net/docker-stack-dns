@@ -1,7 +1,7 @@
 #trunk-ignore-all(trivy/DS002,trivy/DS026,checkov/CKV_DOCKER_2,checkov/CKV_DOCKER_3,terrascan/AC_DOCKER_0041)
 FROM alpine:3.18 as bind9
 
-# renovate: datasource=repology depName=alpine_3_18/bind versioning=loose
+# renovate: datasource=repology depName=alpine_3_19/bind versioning=loose
 ARG BIND9_VERSION="9.18.16-r0"
 
 RUN apk --update --no-cache add \
